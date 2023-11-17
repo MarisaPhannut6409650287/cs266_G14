@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "mocha": "^10.2.0"
+  },
+  "scripts": {
+    "test": "mocha",
+    "format": "npx prettier . --write"
+  },
+  "dependencies": {
+    "chai": "^4.3.10",
+    "prettier": "^3.1.0",
+    "selenium-webdriver": "^4.15.0"
+  }
+}
