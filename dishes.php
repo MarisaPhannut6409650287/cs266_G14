@@ -1,9 +1,3 @@
-<!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
 <!DOCTYPE html>
 <html lang="en">
 <?php
@@ -14,13 +8,6 @@ session_start();
 include_once 'product-action.php';
 
 ?>
-<!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
-
 
 <head>
     <meta charset="utf-8">
@@ -38,16 +25,7 @@ include_once 'product-action.php';
 </head>
 
 <body>
-    <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
-
     <header id="header" class="header-scroll top-header headrom">
-        <!-- Add this code before the opening <nav> tag -->
-
         <nav class="navbar navbar-dark">
             <div class="container">
                 <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse"
@@ -73,13 +51,6 @@ include_once 'product-action.php';
                         }
 
                         ?>
-                        <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
-
                     </ul>
                 </div>
             </div>
@@ -114,12 +85,6 @@ include_once 'product-action.php';
                                 </figure>
                             </div>
                         </div>
-                        <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
 
                         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 profile-desc">
                             <div class="pull-left right-text white-txt">
@@ -139,23 +104,15 @@ include_once 'product-action.php';
         </section><br>
         <div class="search-container">
             <form action="" method="post">
-                <!-- Other form fields... -->
-                <input type="text" placeholder="Search menu..." name="search">
+                <input type="text" placeholder="Search menu..." name="search" id="searchMenu">
                 <input type="hidden" name="res_id" value="<?php echo $_GET['res_id']; ?>">
-                <button type="submit" class="btn btn-primary">Search</button>
+                <button type="submit" class="btn btn-primary" name="searchButton">Search</button>
             </form>
 
         </div>
 
         <div class="breadcrumb">
             <div class="container">
-                <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
-
             </div>
         </div>
         <div class="container m-t-30">
@@ -173,13 +130,6 @@ include_once 'product-action.php';
                         </div>
                         <div class="order-row bg-white">
                             <div class="widget-body">
-
-                                <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
 
                                 <?php
 
@@ -210,16 +160,6 @@ include_once 'product-action.php';
                                     $item_total += ($item["price"] * $item["quantity"]);
                                 }
                                 ?>
-
-                                <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
-
-
-
                             </div>
                         </div>
 
@@ -251,16 +191,6 @@ include_once 'product-action.php';
 
                             </div>
                         </div>
-
-
-                        <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
-
-
                     </div>
                 </div>
 
@@ -391,26 +321,11 @@ include_once 'product-action.php';
                 </div>
 
             </div>
-            <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
-
-
             <?php include "include/footer.php" ?>
 
         </div>
 
     </div>
-    <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
-
     <div class="modal fade" id="order-modal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -430,12 +345,6 @@ include_once 'product-action.php';
                                 </div>
 
                             </div>
-                            <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
                             <div class="col-xs-6 col-sm-2 col-lg-2 text-xs-center"> <span class="price pull-left">$
                                     2.99</span></div>
                             <div class="col-xs-6 col-sm-4 col-lg-4">
@@ -469,12 +378,6 @@ include_once 'product-action.php';
                                 </div>
 
                             </div>
-                            <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
                             <div class="col-xs-6 col-sm-2 col-lg-2 text-xs-center"> <span class="price pull-left">$
                                     2.49</span></div>
                             <div class="col-xs-6 col-sm-4 col-lg-4">
@@ -508,12 +411,6 @@ include_once 'product-action.php';
                                 </div>
 
                             </div>
-                            <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
                             <div class="col-xs-6 col-sm-2 col-lg-2 text-xs-center"> <span class="price pull-left">$
                                     1.99</span></div>
                             <div class="col-xs-6 col-sm-4 col-lg-4">
@@ -547,12 +444,6 @@ include_once 'product-action.php';
                                 </div>
 
                             </div>
-                            <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
                             <div class="col-xs-6 col-sm-2 col-lg-2 text-xs-center"> <span class="price pull-left">$
                                     3.15</span></div>
                             <div class="col-xs-6 col-sm-4 col-lg-4">
