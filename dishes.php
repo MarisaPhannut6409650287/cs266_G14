@@ -106,7 +106,7 @@ include_once 'product-action.php';
             <form action="" method="post">
                 <input type="text" placeholder="Search menu..." name="search" id="searchMenu">
                 <input type="hidden" name="res_id" value="<?php echo $_GET['res_id']; ?>">
-                <button type="submit" class="btn btn-primary" name="searchButton">Search</button>
+                <button type="submit" class="btn btn-primary" id="searchButton">Search</button>
             </form>
 
         </div>
@@ -217,7 +217,7 @@ include_once 'product-action.php';
 
                                 // Check if the search is empty
                                 if (empty($search)) {
-                                    echo '<div class="alert alert-warning" role="alert">';
+                                    echo '<div class="alert alert-warning" role="alert" id="alertNotInput">';
                                     echo 'Please enter menu name';
                                     echo '</div>';
                                 } else {
@@ -240,7 +240,7 @@ include_once 'product-action.php';
                                                             </div>
 
                                                             <div class="rest-descr">
-                                                                <h6><a href="#">
+                                                                <h6><a href="#" name="itemMenu">
                                                                         <?php echo $product['title']; ?>
                                                                     </a></h6>
                                                                 <p>
@@ -288,7 +288,7 @@ include_once 'product-action.php';
                                                         </div>
 
                                                         <div class="rest-descr">
-                                                            <h6><a href="#">
+                                                            <h6><a href="#" name="itemMenu">
                                                                     <?php echo $product['title']; ?>
                                                                 </a></h6>
                                                             <p>
@@ -374,7 +374,8 @@ include_once 'product-action.php';
                                 </div>
 
                                 <div class="rest-descr">
-                                    <h6><a href="#">Sandwich de Alegranza Grande Menü (28 - 30 cm.)</a></h6>
+                                    <h6><a href="#" name="listItem">Sandwich de Alegranza Grande Menü (28 - 30 cm.)</a>
+                                    </h6>
                                 </div>
 
                             </div>
@@ -407,7 +408,8 @@ include_once 'product-action.php';
                                 </div>
 
                                 <div class="rest-descr">
-                                    <h6><a href="#">Sandwich de Alegranza Grande Menü (28 - 30 cm.)</a></h6>
+                                    <h6><a href="#" name="listItem">Sandwich de Alegranza Grande Menü (28 - 30 cm.)</a>
+                                    </h6>
                                 </div>
 
                             </div>
