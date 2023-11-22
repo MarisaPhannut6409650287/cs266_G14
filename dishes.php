@@ -4,7 +4,7 @@
 include("connection/connect.php");
 error_reporting(0);
 session_start();
-
+$res_id = $_GET['res_id'];
 include_once 'product-action.php';
 
 ?>
@@ -64,7 +64,7 @@ include_once 'product-action.php';
                     <li class="col-xs-12 col-sm-4 link-item"><span>1</span><a href="restaurants.php">Choose
                             Restaurant</a></li>
                     <li class="col-xs-12 col-sm-4 link-item active"><span>2</span><a
-                            href="dishes.php?res_id=<?php echo $_GET['res_id']; ?>">Pick Your favorite food</a></li>
+                            href="dishes.php?res_id=<?php echo $res_id; ?>">Pick Your favorite food</a></li>
                     <li class="col-xs-12 col-sm-4 link-item"><span>3</span><a href="#">Order and Pay</a></li>
 
                 </ul>
@@ -105,11 +105,11 @@ include_once 'product-action.php';
         <div class="search-container">
             <form action="" method="post">
                 <input type="text" placeholder="Search menu..." name="search" id="searchMenu">
-                <input type="hidden" name="res_id" value="<?php echo $_GET['res_id']; ?>">
                 <button type="submit" class="btn btn-primary" id="searchButton">Search</button>
             </form>
 
         </div>
+
 
         <div class="breadcrumb">
             <div class="container">
@@ -140,7 +140,7 @@ include_once 'product-action.php';
 
                                     <div class="title-row">
                                         <?php echo $item["title"]; ?><a
-                                            href="dishes.php?res_id=<?php echo $_GET['res_id']; ?>&action=remove&id=<?php echo $item["d_id"]; ?>">
+                                            href="dishes.php?res_id=<?php echo $res_id; ?>&action=remove&id=<?php echo $item["d_id"]; ?>">
                                             <i class="fa fa-trash pull-right"></i></a>
                                     </div>
 
@@ -177,13 +177,13 @@ include_once 'product-action.php';
                                     ?>
 
 
-                                    <a href="checkout.php?res_id=<?php echo $_GET['res_id']; ?>&action=check"
+                                    <a href="checkout.php?res_id=<?php echo $res_id; ?>&action=check"
                                         class="btn btn-danger btn-lg disabled">Checkout</a>
 
                                     <?php
                                 } else {
                                     ?>
-                                    <a href="checkout.php?res_id=<?php echo $_GET['res_id']; ?>&action=check"
+                                    <a href="checkout.php?res_id=<?php echo $res_id; ?>&action=check"
                                         class="btn btn-success btn-lg active">Checkout</a>
                                     <?php
                                 }
@@ -213,7 +213,7 @@ include_once 'product-action.php';
                             <?php
                             if (isset($_POST['search'])) {
                                 $search = mysqli_real_escape_string($db, $_POST['search']);
-                                $res_id = isset($_POST['res_id']) ? $_POST['res_id'] : null;
+
 
                                 // Check if the search is empty
                                 if (empty($search)) {
@@ -232,7 +232,7 @@ include_once 'product-action.php';
                                                 <div class="row">
                                                     <div class="col-xs-12 col-sm-12 col-lg-8">
                                                         <form method="post"
-                                                            action='dishes.php?res_id=<?php echo $_GET['res_id']; ?>&action=add&id=<?php echo $product['d_id']; ?>'>
+                                                            action='dishes.php?res_id=<?php echo $res_id; ?>&action=add&id=<?php echo $product['d_id']; ?>'>
                                                             <div class="rest-logo pull-left">
                                                                 <a class="restaurant-logo pull-left" href="#">
                                                                     <?php echo '<img src="admin/Res_img/dishes/' . $product['img'] . '" alt="Food logo">'; ?>
@@ -263,7 +263,7 @@ include_once 'product-action.php';
                                             </div>
                                         <?php }
                                     } else {
-                                        echo '<div class="alert alert-danger" role="alert">';
+                                        echo '<div class="alert alert-danger" role="alert" id="alertNotFound">';
                                         echo 'Menu not found!!';
                                         echo '</div>';
                                     }
@@ -280,7 +280,7 @@ include_once 'product-action.php';
                                             <div class="row">
                                                 <div class="col-xs-12 col-sm-12 col-lg-8">
                                                     <form method="post"
-                                                        action='dishes.php?res_id=<?php echo $_GET['res_id']; ?>&action=add&id=<?php echo $product['d_id']; ?>'>
+                                                        action='dishes.php?res_id=<?php echo $res_id; ?>&action=add&id=<?php echo $product['d_id']; ?>'>
                                                         <div class="rest-logo pull-left">
                                                             <a class="restaurant-logo pull-left" href="#">
                                                                 <?php echo '<img src="admin/Res_img/dishes/' . $product['img'] . '" alt="Food logo">'; ?>
