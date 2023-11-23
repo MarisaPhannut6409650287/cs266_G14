@@ -72,76 +72,76 @@ if (empty($_SESSION['user_id'])) {
 
 
             /* 
-                                                                                                                                                                    table { 
-                                                                                                                                                                        width: 750px; 
-                                                                                                                                                                        border-collapse: collapse; 
-                                                                                                                                                                        margin: auto;
+                                                                                                                                                                                                                table { 
+                                                                                                                                                                                                                    width: 750px; 
+                                                                                                                                                                                                                    border-collapse: collapse; 
+                                                                                                                                                                                                                    margin: auto;
     
-                                                                                                                                                                        }
+                                                                                                                                                                                                                    }
 
-                                                                                                                                                                    /* Zebra striping */
+                                                                                                                                                                                                                /* Zebra striping */
             /* tr:nth-of-type(odd) { 
-                                                                                                                                                                        background: #eee; 
-                                                                                                                                                                        }
+                                                                                                                                                                                                                    background: #eee; 
+                                                                                                                                                                                                                    }
 
-                                                                                                                                                                    th { 
-                                                                                                                                                                        background: #404040; 
-                                                                                                                                                                        color: white; 
-                                                                                                                                                                        font-weight: bold; 
+                                                                                                                                                                                                                th { 
+                                                                                                                                                                                                                    background: #404040; 
+                                                                                                                                                                                                                    color: white; 
+                                                                                                                                                                                                                    font-weight: bold; 
     
-                                                                                                                                                                        }
+                                                                                                                                                                                                                    }
 
-                                                                                                                                                                    td, th { 
-                                                                                                                                                                        padding: 10px; 
-                                                                                                                                                                        border: 1px solid #ccc; 
-                                                                                                                                                                        text-align: left; 
-                                                                                                                                                                        font-size: 14px;
+                                                                                                                                                                                                                td, th { 
+                                                                                                                                                                                                                    padding: 10px; 
+                                                                                                                                                                                                                    border: 1px solid #ccc; 
+                                                                                                                                                                                                                    text-align: left; 
+                                                                                                                                                                                                                    font-size: 14px;
     
-                                                                                                                                                                        } */
+                                                                                                                                                                                                                    } */
             @media only screen and (max-width: 760px),
             (min-device-width: 768px) and (max-device-width: 1024px) {
 
                 /* table { 
-                                                                                                                                                                              width: 100%; 
-                                                                                                                                                                        }
+                                                                                                                                                                                                                          width: 100%; 
+                                                                                                                                                                                                                    }
 
     
-                                                                                                                                                                        table, thead, tbody, th, td, tr { 
-                                                                                                                                                                            display: block; 
-                                                                                                                                                                        } */
+                                                                                                                                                                                                                    table, thead, tbody, th, td, tr { 
+                                                                                                                                                                                                                        display: block; 
+                                                                                                                                                                                                                    } */
 
 
                 /* thead tr { 
-                                                                                                                                                                            position: absolute;
-                                                                                                                                                                            top: -9999px;
-                                                                                                                                                                            left: -9999px;
-                                                                                                                                                                        }
+                                                                                                                                                                                                                        position: absolute;
+                                                                                                                                                                                                                        top: -9999px;
+                                                                                                                                                                                                                        left: -9999px;
+                                                                                                                                                                                                                    }
     
-                                                                                                                                                                        tr { border: 1px solid #ccc; } */
+                                                                                                                                                                                                                    tr { border: 1px solid #ccc; } */
 
                 /* td { 
         
-                                                                                                                                                                            border: none;
-                                                                                                                                                                            border-bottom: 1px solid #eee; 
-                                                                                                                                                                            position: relative;
-                                                                                                                                                                            padding-left: 50%; 
-                                                                                                                                                                        }
+                                                                                                                                                                                                                        border: none;
+                                                                                                                                                                                                                        border-bottom: 1px solid #eee; 
+                                                                                                                                                                                                                        position: relative;
+                                                                                                                                                                                                                        padding-left: 50%; 
+                                                                                                                                                                                                                    }
 
-                                                                                                                                                                        td:before { 
+                                                                                                                                                                                                                    td:before { 
         
-                                                                                                                                                                            position: absolute;
+                                                                                                                                                                                                                        position: absolute;
     
-                                                                                                                                                                            top: 6px;
-                                                                                                                                                                            left: 6px;
-                                                                                                                                                                            width: 45%; 
-                                                                                                                                                                            padding-right: 10px; 
-                                                                                                                                                                            white-space: nowrap;
+                                                                                                                                                                                                                        top: 6px;
+                                                                                                                                                                                                                        left: 6px;
+                                                                                                                                                                                                                        width: 45%; 
+                                                                                                                                                                                                                        padding-right: 10px; 
+                                                                                                                                                                                                                        white-space: nowrap;
         
-                                                                                                                                                                            content: attr(data-column);
+                                                                                                                                                                                                                        content: attr(data-column);
 
-                                                                                                                                                                            color: #000;
-                                                                                                                                                                            font-weight: bold;
-                                                                                                                                                                        } */
+                                                                                                                                                                                                                        color: #000;
+                                                                                                                                                                                                                        font-weight: bold;
+                                                                                                                                                                                                                    } */
 
             }
         </style>
@@ -257,25 +257,30 @@ if (empty($_SESSION['user_id'])) {
                                                                 <?php
                                                                 if ($status == "" or $status == "NULL") {
                                                                     ?>
-                                                                    <p id="statusButtn">
-                                                                        Dispatch
-                                                                    </p>
+                                                                    <button type="button" class="btn btn-info" id="statusButtn">
+                                                                        <span class="fa fa-bars" aria-hidden="true"></span> Dispatch
+                                                                    </button>
                                                                     <?php
                                                                 } elseif ($status == "in process") {
                                                                     echo '<script>alert("On The Way!")</script>'; ?>
-                                                                    <p id="statusButtn">On The Way!
-                                                                    </p>
+                                                                    <button type="button" class="btn btn-warning" id="statusButtn">
+                                                                        <span class="fa fa-cog fa-spin" aria-hidden="true"></span> On
+                                                                        The Way!
+                                                                    </button>
                                                                     <?php
                                                                 } elseif ($status == "closed") {
                                                                     echo '<script>alert("Delivered")</script>'; ?>
-                                                                    <p id="statusButtn">
+                                                                    <button type="button" class="btn btn-success" id="statusButtn">
+                                                                        <span class="fa fa-check-circle" aria-hidden="true"></span>
                                                                         Delivered
-                                                                    </p>
+                                                                    </button>
                                                                     <?php
                                                                 } elseif ($status == "rejected") {
                                                                     echo '<script>alert("Cancelled")</script>'; ?>
-                                                                    <p id="statusButtn">Cancelled
-                                                                    </p>
+                                                                    <button type="button" class="btn btn-danger" id="statusButtn">
+                                                                        <i class="fa fa-close"></i>
+                                                                        Cancelled
+                                                                    </button>
                                                                     <?php
                                                                 }
                                                                 ?>
