@@ -4,7 +4,7 @@
                         Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
                         for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
                         Visit My Website : developerrony.com -->
-<!DOCTYPE html>
+                        <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -100,11 +100,18 @@ if(isset($_POST['submit']))
      {
 	$loginquery ="SELECT * FROM users WHERE username='$username' && password='".md5($password)."'"; //selecting matching records
 	$result=mysqli_query($db, $loginquery); //executing
-	$row=mysqli_fetch_array($result);
+	$row=mysqli_fetch_array($result,MYSQLI_ASSOC);
 	
 	                        if(is_array($row)) 
 								{
                                     	$_SESSION["user_id"] = $row['u_id']; 
+                                        $_SESSION["username"] = $row['username'];
+                                        $_SESSION["firstname"] = $row['f_name'];
+                                        $_SESSION["lastname"] = $row['l_name'];
+                                        $_SESSION["email"] = $row['email'];
+                                        $_SESSION["phone"] = $row['phone'];
+                                        $_SESSION["address"] = $row['address'];
+                                        $_SESSION["date"] = $row['date'];
 										 header("refresh:1;url=index.php"); 
 	                            } 
 							else
