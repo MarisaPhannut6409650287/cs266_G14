@@ -2,171 +2,219 @@
 <html lang="en">
 <?php
 include("connection/connect.php");
-include_once 'product-action.php';
 error_reporting(0);
 session_start();
 
+if (empty($_SESSION['user_id'])) {
+    header('location:login.php');
+} else {
+    ?>
 
-function function_alert() { 
-      
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="#">
+        <title>My Orders</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/animsition.min.css" rel="stylesheet">
+        <link href="css/animate.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <style type="text/css" rel="stylesheet">
+            .indent-small {
+                margin-left: 5px;
+            }
 
-    echo "<script>alert('Thank you. Your Order has been placed!');</script>"; 
-    echo "<script>window.location.replace('your_orders.php');</script>"; 
-} 
+            .form-group.internal {
+                margin-bottom: 0;
+            }
 
-if(empty($_SESSION["user_id"]))
-{
-	header('location:login.php');
-}
-else{
-    $uid = $_SESSION["user_id"];
-    $username = $_SESSION["username"];
-    $fname = $_SESSION["firstname"];
-    $lname = $_SESSION["lastname"];
-    $email = $_SESSION["email"];
-    $phone = $_SESSION["phone"];
-    $address = $_SESSION["address"];
-    $date = $_SESSION["date"];
-?>
+            .dialog-panel {
+                margin: 10px;
+            }
+
+            .datepicker-dropdown {
+                z-index: 200 !important;
+            }
+
+            .panel-body {
+                background: #e5e5e5;
+                /* Old browsers */
+                background: -moz-radial-gradient(center, ellipse cover, #e5e5e5 0%, #ffffff 100%);
+                /* FF3.6+ */
+                background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #e5e5e5), color-stop(100%, #ffffff));
+                /* Chrome,Safari4+ */
+                background: -webkit-radial-gradient(center, ellipse cover, #e5e5e5 0%, #ffffff 100%);
+                /* Chrome10+,Safari5.1+ */
+                background: -o-radial-gradient(center, ellipse cover, #e5e5e5 0%, #ffffff 100%);
+                /* Opera 12+ */
+                background: -ms-radial-gradient(center, ellipse cover, #e5e5e5 0%, #ffffff 100%);
+                /* IE10+ */
+                background: radial-gradient(ellipse at center, #e5e5e5 0%, #ffffff 100%);
+                /* W3C */
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e5e5e5', endColorstr='#ffffff', GradientType=1);
+                font: 600 15px "Open Sans", Arial, sans-serif;
+            }
+
+            label.control-label {
+                font-weight: 600;
+                color: #777;
+            }
 
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="#">
-    <title>My Profile || Online Food Ordering System - Code Camp BD</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/animsition.min.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-</head>
+                                                                                                                                                                                                         } */
+            @media only screen and (max-width: 760px),
+            (min-device-width: 768px) and (max-device-width: 1024px) {
 
-<body>
-    <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
-    <div class="site-wrapper">
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+
         <header id="header" class="header-scroll top-header headrom">
+
             <nav class="navbar navbar-dark">
                 <div class="container">
-                    <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
-                    <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/logo.png" alt="" width="18%"> </a>
+                    <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse"
+                        data-target="#mainNavbarCollapse">&#9776;</button>
+                    <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/logo.png" alt=""
+                            width="18%"> </a>
                     <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                         <ul class="nav navbar-nav">
-                            <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a> </li>
-                            <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Restaurants <span class="sr-only"></span></a> </li>
+                            <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span
+                                        class="sr-only">(current)</span></a> </li>
+                            <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Restaurants <span
+                                        class="sr-only"></span></a> </li>
 
                             <?php
-						if(empty($_SESSION["user_id"]))
-							{
-								echo '<li class="nav-item"><a href="login.php" class="nav-link active">Login</a> </li>
+                            if (empty($_SESSION["user_id"])) {
+                                echo '<li class="nav-item"><a href="login.php" class="nav-link active">Login</a> </li>
 							  <li class="nav-item"><a href="registration.php" class="nav-link active">Register</a> </li>';
-							}
-						else
-							{
-									
-									
-										echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">My Orders</a> </li>';
-                                        echo  '<li class="nav-item"><a href="profile.php" class="nav-link active">My Profile</a> </li>';
-									echo  '<li class="nav-item"><a href="logout.php" class="nav-link active">Logout</a> </li>';
-							}
+                            } else {
 
-						?>
-                            <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
+
+                                echo '<li class="nav-item"><a href="your_orders.php" class="nav-link active">My Orders</a> </li>';
+                                echo '<li class="nav-item"><a href="profile.php" class="nav-link active" id="myProfile">My Profile</a> </li>';
+                                echo '<li class="nav-item"><a href="logout.php" class="nav-link active">Logout</a> </li>';
+                            }
+
+                            ?>
+
+
                         </ul>
                     </div>
                 </div>
             </nav>
+
         </header>
         <div class="page-wrapper">
-            <div class="container-fluid">
-            <div class="col-lg-12">
-                    <div class="card card-outline-primary">
-                        <div class="card-header">
-                            <h4 class="m-b-0 text-white">My Profile</h4>
-                        </div>
-                        <div class="card-body pt-3">
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <p class="md-0" style="color:black">User ID</p>
+
+
+
+            <div class="inner-page-hero bg-image" data-image-src="images/img/pimg.jpg">
+                <div class="container"> </div>
+
+            </div>
+            <div class="result-show">
+                <div class="container">
+                    <div class="row">
+
+
+                    </div>
+                </div>
+            </div>
+
+            <section class="profile-page">
+                            
+            <?php
+
+            $query_res = mysqli_query($db, "select * from users where u_id='" . $_SESSION['user_id'] . "'");
+            
+             $row = mysqli_fetch_array($query_res)
+
+                    ?>
+                    <div class="container">
+                        <div class="col-xs-13">
+                            <div class="bg-gray">
+                                <div class="row">
+                                <br>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="form-group">
+				                    <h4 class="mb-2 text-primary">Personal Details</h4>
                                 </div>
-                                <div class="col-sm-9">
-                                    <p class="text-muted mb-0"> <?php echo $uid; ?></p>
+			                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                
+                                    <label for="website">User-Name</label>
+
+                                    <div class="form-group">
+                                    <?php echo $row['username']; ?>
+                                    </div>
+                                </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="fullName">First Name</label>
+                                    
+                                    <div class="form-group">
+                                    <?php echo $row['f_name']; ?>
+                                    </div>
+                                </div>
+                                </div>
+                                
+                                
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="fullName">Last Name</label>
+                                    <div class="form-group">
+                                    <?php echo $row['l_name']; ?>
+                                    </div>
+                                </div>
+                                </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="eMail">Email</label>
+                                    <div class="form-group">
+                                    <?php echo $row['email']; ?>
+                                    </div>
+                                    </div>
+                            </div>
+                            
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="phone">Phone</label>
+                                    <div class="form-group">
+                                    <?php echo $row['phone']; ?>
+                                    </div>
                                 </div>
                             </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <p class="md-0" style="color:black">Username</p>
                                 </div>
-                                <div class="col-sm-9">
-                                    <p class="text-muted mb-0"><?php echo $username; ?></p>
+                                <hr>
+                                <div class="row">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <div class="form-group">
+                                    <?php echo $row['address']; ?>
+                                    </div>
                                 </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <p class="md-0" style="color:black">Firstname</p>
                                 </div>
-                                <div class="col-sm-9">
-                                    <p class="text-muted mb-0"><?php echo $fname; ?></p>
                                 </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <p class="md-0" style="color:black">Lastname</p>
-                                </div>
-                                <div class="col-sm-9">
-                                    <p class="text-muted mb-0"><?php echo $lname; ?></p>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <p class="md-0" style="color:black">Email</p>
-                                </div>
-                                <div class="col-sm-9">
-                                    <p class="text-muted mb-0"><?php echo $email; ?></p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <p class="md-0" style="color:black">Phone</p>
-                                </div>
-                                <div class="col-sm-9">
-                                    <p class="text-muted mb-0"><?php echo $phone; ?></p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <p class="md-0" style="color:black">Address</p>
-                                </div>
-                                <div class="col-sm-9">
-                                    <p class="text-muted mb-0"><?php echo $address; ?></p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <p class="md-0" style="color:black">Date</p>
-                                </div>
-                                <div class="col-sm-9">
-                                    <p class="text-muted mb-0"><?php echo $date; ?></p>
-                                </div>
-                            </div>
-                        </div>
+                                <br>
 
                         
 
@@ -176,12 +224,7 @@ else{
             </div>
         </div>
     </div>
-    <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
+    
     <?php include "include/footer.php" ?>
     </div>
     </div>
@@ -197,18 +240,7 @@ else{
 </body>
 
 </html>
-<!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
+
 <?php
 }
 ?>
-<!--  Author Name: MH RONY.
-GigHub Link: https://github.com/dev-mhrony
-Facebook Link:https://www.facebook.com/dev.mhrony
-Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-Visit My Website : developerrony.com -->

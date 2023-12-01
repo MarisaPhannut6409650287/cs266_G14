@@ -4,7 +4,7 @@
                         Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
                         for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
                         Visit My Website : developerrony.com -->
-<!DOCTYPE html>
+                        <!DOCTYPE html>
 <html lang="en">
 <?php
 include("connection/connect.php");
@@ -46,21 +46,18 @@ session_start();
                         <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Restaurants <span class="sr-only"></span></a> </li>
 
                         <?php
-						if(empty($_SESSION["user_id"]))
-							{
-								echo '<li class="nav-item"><a href="login.php" class="nav-link active">Login</a> </li>
+                            if (empty($_SESSION["user_id"])) {
+                                echo '<li class="nav-item"><a href="login.php" class="nav-link active">Login</a> </li>
 							  <li class="nav-item"><a href="registration.php" class="nav-link active">Register</a> </li>';
-							}
-						else
-							{
-									
-									
-										echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">My Orders</a> </li>';
-                                        echo '<li class="nav-item"><a href="profile.php" class="nav-link active" id="myProfile">My Profile</a> </li>';
-									echo  '<li class="nav-item"><a href="logout.php" class="nav-link active">Logout</a> </li>';
-							}
+                            } else {
 
-						?>
+
+                                echo '<li class="nav-item"><a href="your_orders.php" class="nav-link active">My Orders</a> </li>';
+                                echo '<li class="nav-item"><a href="profile.php" class="nav-link active" id="myProfile">My Profile</a> </li>';
+                                echo '<li class="nav-item"><a href="logout.php" class="nav-link active">Logout</a> </li>';
+                            }
+
+                            ?>
                         <!--  Author Name: MH RONY.
                         GigHub Link: https://github.com/dev-mhrony
                         Facebook Link:https://www.facebook.com/dev.mhrony

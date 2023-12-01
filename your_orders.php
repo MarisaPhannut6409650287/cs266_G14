@@ -4,7 +4,7 @@
                         Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
                         for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
                         Visit My Website : developerrony.com -->
-<!DOCTYPE html>
+                        <!DOCTYPE html>
 <html lang="en">
 <?php
 include("connection/connect.php");
@@ -166,7 +166,7 @@ if (empty($_SESSION['user_id'])) {
                             <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Restaurants <span
                                         class="sr-only"></span></a> </li>
 
-                            <?php
+                                        <?php
                             if (empty($_SESSION["user_id"])) {
                                 echo '<li class="nav-item"><a href="login.php" class="nav-link active">Login</a> </li>
 							  <li class="nav-item"><a href="registration.php" class="nav-link active">Register</a> </li>';

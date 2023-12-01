@@ -100,18 +100,11 @@ if(isset($_POST['submit']))
      {
 	$loginquery ="SELECT * FROM users WHERE username='$username' && password='".md5($password)."'"; //selecting matching records
 	$result=mysqli_query($db, $loginquery); //executing
-	$row=mysqli_fetch_array($result,MYSQLI_ASSOC);
+	$row=mysqli_fetch_array($result);
 	
 	                        if(is_array($row)) 
 								{
                                     	$_SESSION["user_id"] = $row['u_id']; 
-                                        $_SESSION["username"] = $row['username'];
-                                        $_SESSION["firstname"] = $row['f_name'];
-                                        $_SESSION["lastname"] = $row['l_name'];
-                                        $_SESSION["email"] = $row['email'];
-                                        $_SESSION["phone"] = $row['phone'];
-                                        $_SESSION["address"] = $row['address'];
-                                        $_SESSION["date"] = $row['date'];
 										 header("refresh:1;url=index.php"); 
 	                            } 
 							else
