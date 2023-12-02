@@ -53,7 +53,7 @@ $resID = $_GET['res_id'];
                 //echo "userID not found: " . $userN;
             } else {
                 $userid = $_SESSION["user_id"];
-                $userQuery = $db->prepare("SELECT username FROM users WHERE u_id = ?");
+                $userQuery = $db->prepare("SELECT f_name FROM users WHERE u_id = ?");
                 $userQuery->bind_param("s", $userid);
                 $userQuery->execute();
                 $userQuery->bind_result($username);
