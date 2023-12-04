@@ -71,14 +71,14 @@ session_start();
 
 
                         <?php
-                        if (empty($_SESSION["user_id"])) // if user is not login
-                        {
+                        if (empty($_SESSION["user_id"])) {
                             echo '<li class="nav-item"><a href="login.php" class="nav-link active">Login</a> </li>
 							  <li class="nav-item"><a href="registration.php" class="nav-link active">Register</a> </li>';
                         } else {
 
 
-                            echo '<li class="nav-item"><a href="your_orders.php" class="nav-link active" id="myOrders">My Orders</a> </li>';
+                            echo '<li class="nav-item"><a href="your_orders.php" class="nav-link active">My Orders</a> </li>';
+                            echo '<li class="nav-item"><a href="profile.php" class="nav-link active" id="myProfile">My Profile</a> </li>';
                             echo '<li class="nav-item"><a href="logout.php" class="nav-link active">Logout</a> </li>';
                         }
 
