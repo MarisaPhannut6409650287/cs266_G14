@@ -165,6 +165,9 @@ $resID = $_GET['res_id'];
             <p id="time" style="color: gray;">
                 <?php echo $rowComment1['time']; ?>
             </p><br>
+            <b style="color: #F2A918;">
+                <?php echo number_format($rowComment1['point'], 1); ?>/5.0
+            </b>&nbsp;
             <?php
             $rating = $rowComment1['point'];
             for ($i = 1; $i <= 5; $i++) {

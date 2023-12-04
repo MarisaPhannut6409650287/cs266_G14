@@ -4,7 +4,7 @@
                         Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
                         for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
                         Visit My Website : developerrony.com -->
-                        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <?php
 include("connection/connect.php");
@@ -72,76 +72,76 @@ if (empty($_SESSION['user_id'])) {
 
 
             /* 
-                                                                                                                                                                                                                    table { 
-                                                                                                                                                                                                                        width: 750px; 
-                                                                                                                                                                                                                        border-collapse: collapse; 
-                                                                                                                                                                                                                        margin: auto;
+                                                                                                                                                                                                                        table { 
+                                                                                                                                                                                                                            width: 750px; 
+                                                                                                                                                                                                                            border-collapse: collapse; 
+                                                                                                                                                                                                                            margin: auto;
     
-                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                            }
 
-                                                                                                                                                                                                                    /* Zebra striping */
+                                                                                                                                                                                                                        /* Zebra striping */
             /* tr:nth-of-type(odd) { 
-                                                                                                                                                                                                                        background: #eee; 
-                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                            background: #eee; 
+                                                                                                                                                                                                                            }
 
-                                                                                                                                                                                                                    th { 
-                                                                                                                                                                                                                        background: #404040; 
-                                                                                                                                                                                                                        color: white; 
-                                                                                                                                                                                                                        font-weight: bold; 
+                                                                                                                                                                                                                        th { 
+                                                                                                                                                                                                                            background: #404040; 
+                                                                                                                                                                                                                            color: white; 
+                                                                                                                                                                                                                            font-weight: bold; 
     
-                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                            }
 
-                                                                                                                                                                                                                    td, th { 
-                                                                                                                                                                                                                        padding: 10px; 
-                                                                                                                                                                                                                        border: 1px solid #ccc; 
-                                                                                                                                                                                                                        text-align: left; 
-                                                                                                                                                                                                                        font-size: 14px;
+                                                                                                                                                                                                                        td, th { 
+                                                                                                                                                                                                                            padding: 10px; 
+                                                                                                                                                                                                                            border: 1px solid #ccc; 
+                                                                                                                                                                                                                            text-align: left; 
+                                                                                                                                                                                                                            font-size: 14px;
     
-                                                                                                                                                                                                                        } */
+                                                                                                                                                                                                                            } */
             @media only screen and (max-width: 760px),
             (min-device-width: 768px) and (max-device-width: 1024px) {
 
                 /* table { 
-                                                                                                                                                                                                                              width: 100%; 
-                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                  width: 100%; 
+                                                                                                                                                                                                                            }
 
     
-                                                                                                                                                                                                                        table, thead, tbody, th, td, tr { 
-                                                                                                                                                                                                                            display: block; 
-                                                                                                                                                                                                                        } */
+                                                                                                                                                                                                                            table, thead, tbody, th, td, tr { 
+                                                                                                                                                                                                                                display: block; 
+                                                                                                                                                                                                                            } */
 
 
                 /* thead tr { 
-                                                                                                                                                                                                                            position: absolute;
-                                                                                                                                                                                                                            top: -9999px;
-                                                                                                                                                                                                                            left: -9999px;
-                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                position: absolute;
+                                                                                                                                                                                                                                top: -9999px;
+                                                                                                                                                                                                                                left: -9999px;
+                                                                                                                                                                                                                            }
     
-                                                                                                                                                                                                                        tr { border: 1px solid #ccc; } */
+                                                                                                                                                                                                                            tr { border: 1px solid #ccc; } */
 
                 /* td { 
         
-                                                                                                                                                                                                                            border: none;
-                                                                                                                                                                                                                            border-bottom: 1px solid #eee; 
-                                                                                                                                                                                                                            position: relative;
-                                                                                                                                                                                                                            padding-left: 50%; 
-                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                border: none;
+                                                                                                                                                                                                                                border-bottom: 1px solid #eee; 
+                                                                                                                                                                                                                                position: relative;
+                                                                                                                                                                                                                                padding-left: 50%; 
+                                                                                                                                                                                                                            }
 
-                                                                                                                                                                                                                        td:before { 
+                                                                                                                                                                                                                            td:before { 
         
-                                                                                                                                                                                                                            position: absolute;
+                                                                                                                                                                                                                                position: absolute;
     
-                                                                                                                                                                                                                            top: 6px;
-                                                                                                                                                                                                                            left: 6px;
-                                                                                                                                                                                                                            width: 45%; 
-                                                                                                                                                                                                                            padding-right: 10px; 
-                                                                                                                                                                                                                            white-space: nowrap;
+                                                                                                                                                                                                                                top: 6px;
+                                                                                                                                                                                                                                left: 6px;
+                                                                                                                                                                                                                                width: 45%; 
+                                                                                                                                                                                                                                padding-right: 10px; 
+                                                                                                                                                                                                                                white-space: nowrap;
         
-                                                                                                                                                                                                                            content: attr(data-column);
+                                                                                                                                                                                                                                content: attr(data-column);
 
-                                                                                                                                                                                                                            color: #000;
-                                                                                                                                                                                                                            font-weight: bold;
-                                                                                                                                                                                                                        } */
+                                                                                                                                                                                                                                color: #000;
+                                                                                                                                                                                                                                font-weight: bold;
+                                                                                                                                                                                                                            } */
 
             }
         </style>
@@ -166,7 +166,7 @@ if (empty($_SESSION['user_id'])) {
                             <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Restaurants <span
                                         class="sr-only"></span></a> </li>
 
-                                        <?php
+                            <?php
                             if (empty($_SESSION["user_id"])) {
                                 echo '<li class="nav-item"><a href="login.php" class="nav-link active">Login</a> </li>
 							  <li class="nav-item"><a href="registration.php" class="nav-link active">Register</a> </li>';
@@ -174,6 +174,7 @@ if (empty($_SESSION['user_id'])) {
 
 
                                 echo '<li class="nav-item"><a href="your_orders.php" class="nav-link active">My Orders</a> </li>';
+                                echo '<li class="nav-item"><a href="profile.php" class="nav-link active" id="myProfile">My Profile</a> </li>';
                                 echo '<li class="nav-item"><a href="logout.php" class="nav-link active">Logout</a> </li>';
                             }
 
