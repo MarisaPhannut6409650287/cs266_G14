@@ -129,7 +129,7 @@ session_start();
 																<div class="right-content bg-white">
 																	<div class="right-review">
 																		<a href="dishes.php?res_id=' . $rows['rs_id'] . '" class="btn btn-purple">View Menu</a> 
-                                                                        <a href="viewCommentRes.php?res_id=' . $rows['rs_id'] . '" class="btn btn-purple" id="commentButton">Review</a> 
+                                                                        <a href="viewCommentRes.php?res_id=' . $rows['rs_id'] . '" class="btn btn-purple" id="commentButton' . $rows['rs_id'] . '" name="review">Review</a>
                                                                     </div>
                                                                         
 																</div>
@@ -181,11 +181,11 @@ session_start();
 
 </html>
 <style>
-    #commentButton {
+    a[name="review"] {
         background-color: #EB9124;
     }
 
-    #commentButton:hover {
+    a[name="review"]:hover {
         background-color: #D38220;
     }
 </style>

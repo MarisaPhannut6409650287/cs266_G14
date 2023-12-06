@@ -34,7 +34,7 @@ $resID = $_GET['res_id'];
 
     <br><br><br><br><br>
     <div id=" resInfo">
-        <?php echo '<img src="admin/Res_img/' . $rows['image'] . '" alt="Restaurant logo" style="width:80%;" >'; ?><br>
+        <?php echo '<img src="admin/Res_img/'.$rows['image'].'" alt="Restaurant logo" style="width:80%;" >'; ?><br>
         <h3>
             <?php echo $rows['title']; ?>
         </h3>
@@ -47,13 +47,13 @@ $resID = $_GET['res_id'];
         <h4> Write review our restaurant here! </h4>
 
         <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            if (empty($_SESSION["user_id"])) {
+        if($_SERVER["REQUEST_METHOD"] == "POST") {
+            if(empty($_SESSION["user_id"])) {
                 $userN = "Anonymous";
                 //echo "userID not found: " . $userN;
             } else {
                 $userid = $_SESSION["user_id"];
-                $userQuery = $db->prepare("SELECT f_name FROM users WHERE u_id = ?");
+                $userQuery = $db->prepare("SELECT username FROM users WHERE u_id = ?");
                 $userQuery->bind_param("s", $userid);
                 $userQuery->execute();
                 $userQuery->bind_result($username);
@@ -64,13 +64,13 @@ $resID = $_GET['res_id'];
                 //echo "User: " . $userN;
             }
 
-            if (isset($_POST["send"])) {
+            if(isset($_POST["send"])) {
                 $rate = $_POST["rating"];
                 $type = $_POST["type"];
                 $detail = $_POST["detail"];
                 $date = date("Y-m-d");
 
-                if (empty($type) || empty($detail) || empty($rate)) {
+                if(empty($type) || empty($detail) || empty($rate)) {
                     ?>
                     <h6 id="message" style="color: red ;">Please fill in all required fields</h6>
                     <?php
@@ -103,16 +103,17 @@ $resID = $_GET['res_id'];
             <h5>Rate us now!!</h5>
             <p class="stars">
                 <span>
-                    <a class="star-1" href="#" data-rating="1">1</a>
-                    <a class="star-2" href="#" data-rating="2">2</a>
-                    <a class="star-3" href="#" data-rating="3">3</a>
-                    <a class="star-4" href="#" data-rating="4">4</a>
-                    <a class="star-5" href="#" data-rating="5">5</a>
+                    <a class="star-1" href="#" data-rating="1" id="star1">1</a>
+                    <a class="star-2" href="#" data-rating="2" id="star2">2</a>
+                    <a class="star-3" href="#" data-rating="3" id="star3">3</a>
+                    <a class="star-4" href="#" data-rating="4" id="star4">4</a>
+                    <a class="star-5" href="#" data-rating="5" id="star5">5</a>
                 </span>
             </p>
             <input type="hidden" name="rating" id="ratingInput" value="">
             <button type="submit" class="btn btn-success" id="commentButtn" name="send">Send Review</button>
         </form><br>
+
     </div>
     <br><br>
     <?php
@@ -128,69 +129,83 @@ $resID = $_GET['res_id'];
     $avgFormatted = number_format($avg, 1);
 
     $distance = $avgFormatted - floor($avgFormatted);
-    if ($distance >= 0.5) {
+    if($distance >= 0.5) {
         $finalAvgStar = ceil($avgFormatted);
     } else {
         $finalAvgStar = floor($avgFormatted);
     }
     ?>
 
-    <h1 id="avgPoint">
-        <?php echo $avgFormatted; ?>/5.0
-    </h1>
+    <div class="container">
+        <h1 id="avgPoint">
+            <?php echo $avgFormatted; ?>
+        </h1>
+        <h1 id="fullPoint">/5.0</h1>
+    </div>
     <div id="avgStar">
         <?php
-        for ($i = 1; $i <= 5; $i++) {
-            echo '<span class="fa fa-star ' . ($i <= $avg ? 'checked' : '') . '"></span>';
+        for($i = 1; $i <= 5; $i++) {
+            echo '<span class="fa fa-star '.($i <= $finalAvgStar ? 'checked' : '').'"></span>';
         }
         ?>
     </div><br>
-    <h2 id="count">
-        <?php echo $commentCount; ?> Review
-    </h2>
+
+    <div class="container">
+        <h2 id="count">
+            <?php echo $commentCount; ?>
+        </h2>&nbsp;&nbsp;
+        <h2 id="countReview">
+            Review
+        </h2>
+    </div>
     <br><br>
 
     <?php
     $comment = mysqli_query($db, "select * from commentRes where resID='$_GET[res_id]'");
     ?><br>
 
-    <div id="displayComment">
-        <?php
-        while ($rowComment1 = mysqli_fetch_array($comment)) {
-            ?>
 
+    <?php
+    while($rowComment1 = mysqli_fetch_array($comment)) {
+        ?>
+        <div id="displayComment">
             <h6 id="user">
                 <?php echo $rowComment1['username']; ?>
             </h6>
             <p id="time" style="color: gray;">
                 <?php echo $rowComment1['time']; ?>
             </p><br>
+            <b style="color: #F2A918;" id="pointUser">
+                <?php echo number_format($rowComment1['point'], 1); ?>
+            </b>
             <b style="color: #F2A918;">
-                <?php echo number_format($rowComment1['point'], 1); ?>/5.0
-            </b>&nbsp;
+                /5.0
+            </b>
             <?php
             $rating = $rowComment1['point'];
-            for ($i = 1; $i <= 5; $i++) {
-                echo '<span class="fa fa-star ' . ($i <= $rating ? 'checked' : '') . '"></span>';
+            for($i = 1; $i <= 5; $i++) {
+                echo '<span class="fa fa-star '.($i <= $rating ? 'checked' : '').'"></span>';
             }
             ?>
             <div id="detail">
                 <p id="displayDetail">
                     <b id="commentType" style="color: #4B6E99;">
                         <?php echo $rowComment1['type']; ?>
-                    </b>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <?php echo $rowComment1['detail']; ?>
+                    </b>&nbsp;&nbsp;
+                    <span id="word">
+                        <?php echo $rowComment1['detail']; ?>
+                    </span>
                 </p>
 
             </div>
-            <hr id="underView"><br>
+            <hr id="underView">
+        </div>
+        <?php
+    }
+    ?>
+    <br>
 
-            <?php
-        }
-        ?>
-
-    </div>
-    <p style="margin-bottom: 58px; font-size: 18px;">End Review</p>
+    <p style="margin-bottom: 58px; font-size: 18px;" id="end">End Review</p>
 
     <script>
         $(document).ready(function () {
@@ -245,7 +260,8 @@ $resID = $_GET['res_id'];
     h4,
     h5,
     h6,
-    p {
+    #stars,
+    #end {
         font-family: 'Source Sans 3', sans-serif;
         text-align: center;
     }
@@ -284,11 +300,19 @@ $resID = $_GET['res_id'];
 
     }
 
-    #avgPoint {
+    #avgPoint,
+    #fullPoint {
         font-family: 'Source Sans 3', sans-serif;
         font-weight: 800;
+        display: inline-block;
         text-align: center;
         color: #F2A918;
+        vertical-align: middle;
+    }
+
+    .container {
+        text-align: center;
+        /* Center-align the container */
     }
 
     #avgStar {
@@ -296,10 +320,12 @@ $resID = $_GET['res_id'];
         font-size: 26px;
     }
 
-    #count {
+    #count,
+    #countReview {
         font-family: 'Source Sans 3', sans-serif;
         font-weight: 800;
         text-align: center;
+        display: inline-block;
     }
 
     #review h4 {
@@ -410,6 +436,10 @@ $resID = $_GET['res_id'];
             margin-left: 0px;
             /* Adjust the margin for smaller screens */
         }
+    }
+
+    #word {
+        font-size: 18px;
     }
 
     #detail p {

@@ -65,11 +65,10 @@ if (empty($_SESSION['user_id'])) {
             }
 
 
-                                                                                                                                                                                                         } */
-            @media only screen and (max-width: 760px),
-            (min-device-width: 768px) and (max-device-width: 1024px) {
-
             }
+
+            */ @media only screen and (max-width: 760px),
+            (min-device-width: 768px) and (max-device-width: 1024px) {}
         </style>
 
     </head>
@@ -131,116 +130,116 @@ if (empty($_SESSION['user_id'])) {
             </div>
 
             <section class="profile-page">
-                            
-            <?php
 
-            $query_res = mysqli_query($db, "select * from users where u_id='" . $_SESSION['user_id'] . "'");
-            
-             $row = mysqli_fetch_array($query_res)
+                <?php
+
+                $query_res = mysqli_query($db, "select * from users where u_id='" . $_SESSION['user_id'] . "'");
+
+                $row = mysqli_fetch_array($query_res)
 
                     ?>
-                    <div class="container">
-                        <div class="col-xs-13">
-                            <div class="bg-gray">
-                                <div class="row">
+                <div class="container">
+                    <div class="col-xs-13">
+                        <div class="bg-gray">
+                            <div class="row">
                                 <br>
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                <div class="form-group">
-				                    <h4 class="mb-2 text-primary">Personal Details</h4>
-                                </div>
-			                    </div>
-                                </div>
-                                <hr>
-                                <div class="row">
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                
-                                    <label for="website">User-Name</label>
-
                                     <div class="form-group">
-                                    <?php echo $row['username']; ?>
-                                    </div>
-                                </div>
-                                </div>
-                                <hr>
-                                <div class="row">
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="form-group">
-                                    <label for="fullName">First Name</label>
-                                    
-                                    <div class="form-group">
-                                    <?php echo $row['f_name']; ?>
-                                    </div>
-                                </div>
-                                </div>
-                                
-                                
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="form-group">
-                                    <label for="fullName">Last Name</label>
-                                    <div class="form-group">
-                                    <?php echo $row['l_name']; ?>
-                                    </div>
-                                </div>
-                                </div>
-                                </div>
-                                <hr>
-                                <div class="row">
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="form-group">
-                                    <label for="eMail">Email</label>
-                                    <div class="form-group">
-                                    <?php echo $row['email']; ?>
-                                    </div>
-                                    </div>
-                            </div>
-                            
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="form-group">
-                                    <label for="phone">Phone</label>
-                                    <div class="form-group">
-                                    <?php echo $row['phone']; ?>
+                                        <h4 class="mb-2 text-primary">Personal Details</h4>
                                     </div>
                                 </div>
                             </div>
-                                </div>
-                                <hr>
-                                <div class="row">
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label for="address">Address</label>
-                                <div class="form-group">
-                                    <?php echo $row['address']; ?>
+                            <hr>
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+
+                                    <label for="website">Username</label>
+
+                                    <div class="form-group">
+                                        <?php echo $row['username']; ?>
                                     </div>
                                 </div>
-                                </div>
-                                </div>
-                                <br>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="fullName">First Name</label>
 
-                        
+                                        <div class="form-group">
+                                            <?php echo $row['f_name']; ?>
+                                        </div>
+                                    </div>
+                                </div>
 
-                        
+
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="fullName">Last Name</label>
+                                        <div class="form-group">
+                                            <?php echo $row['l_name']; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="eMail">Email</label>
+                                        <div class="form-group">
+                                            <?php echo $row['email']; ?>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="phone">Phone</label>
+                                        <div class="form-group">
+                                            <?php echo $row['phone']; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="address">Address</label>
+                                        <div class="form-group">
+                                            <?php echo $row['address']; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+
+
+
+
+                        </div>
                     </div>
                 </div>
-            </div>
         </div>
-    </div>
-    
-    <?php include "include/footer.php" ?>
-    </div>
-    </div>
+        </div>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/tether.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/animsition.min.js"></script>
-    <script src="js/bootstrap-slider.min.js"></script>
-    <script src="js/jquery.isotope.min.js"></script>
-    <script src="js/headroom.js"></script>
-    <script src="js/foodpicky.min.js"></script>
-</body>
+        <?php include "include/footer.php" ?>
+        </div>
+        </div>
 
-</html>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/tether.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/animsition.min.js"></script>
+        <script src="js/bootstrap-slider.min.js"></script>
+        <script src="js/jquery.isotope.min.js"></script>
+        <script src="js/headroom.js"></script>
+        <script src="js/foodpicky.min.js"></script>
+    </body>
 
-<?php
+    </html>
+
+    <?php
 }
 ?>
