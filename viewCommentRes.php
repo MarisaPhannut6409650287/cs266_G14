@@ -64,8 +64,8 @@ $resID = $_GET['res_id'];
                 //echo "User: " . $userN;
             }
 
-            if(isset($_POST["send"])) {
-                $rate = $_POST["rating"];
+            if(isset($_POST["detail"])) {
+                $rate = $_POST["point"];
                 $type = $_POST["type"];
                 $detail = $_POST["detail"];
                 $date = date("Y-m-d");
@@ -101,16 +101,13 @@ $resID = $_GET['res_id'];
                 <input type="text" class="form-control" aria-label="Text input with dropdown button" name="detail">
             </div><br>
             <h5>Rate us now!!</h5>
-            <p class="stars">
-                <span>
-                    <a class="star-1" href="#" data-rating="1" id="star1">1</a>
-                    <a class="star-2" href="#" data-rating="2" id="star2">2</a>
-                    <a class="star-3" href="#" data-rating="3" id="star3">3</a>
-                    <a class="star-4" href="#" data-rating="4" id="star4">4</a>
-                    <a class="star-5" href="#" data-rating="5" id="star5">5</a>
-                </span>
-            </p>
-            <input type="hidden" name="rating" id="ratingInput" value="">
+            <select class="form-select" id="inputGroupSelect02" name="point">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select><br>
             <button type="submit" class="btn btn-success" id="commentButtn" name="send">Send Review</button>
         </form><br>
 
@@ -207,25 +204,6 @@ $resID = $_GET['res_id'];
 
     <p style="margin-bottom: 58px; font-size: 18px;" id="end">End Review</p>
 
-    <script>
-        $(document).ready(function () {
-            $('.stars a').on('click', function (e) {
-                e.preventDefault(); // Prevent the default behavior
-
-                $('.stars span, .stars a').removeClass('active');
-                $(this).addClass('active');
-                $('.stars span').addClass('active');
-
-                var rating = $(this).data('rating');
-                $('#ratingInput').val(rating);
-            });
-
-            $('#commentButtn').click(function () {
-                $('#formSubmit').submit();
-            });
-        });
-    </script>
-
 </body>
 
 </html>
@@ -264,6 +242,12 @@ $resID = $_GET['res_id'];
     #end {
         font-family: 'Source Sans 3', sans-serif;
         text-align: center;
+    }
+
+    #inputGroupSelect02 {
+        width: 60px;
+        margin: 0 auto;
+        display: block;
     }
 
     h3 {
