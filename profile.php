@@ -5,7 +5,7 @@ include("connection/connect.php");
 error_reporting(0);
 session_start();
 
-if (empty($_SESSION['user_id'])) {
+if(empty($_SESSION['user_id'])) {
     header('location:login.php');
 } else {
     ?>
@@ -64,9 +64,6 @@ if (empty($_SESSION['user_id'])) {
                 color: #777;
             }
 
-
-            }
-
             */ @media only screen and (max-width: 760px),
             (min-device-width: 768px) and (max-device-width: 1024px) {}
         </style>
@@ -92,7 +89,7 @@ if (empty($_SESSION['user_id'])) {
                                         class="sr-only"></span></a> </li>
 
                             <?php
-                            if (empty($_SESSION["user_id"])) {
+                            if(empty($_SESSION["user_id"])) {
                                 echo '<li class="nav-item"><a href="login.php" class="nav-link active">Login</a> </li>
 							  <li class="nav-item"><a href="registration.php" class="nav-link active">Register</a> </li>';
                             } else {
@@ -133,7 +130,7 @@ if (empty($_SESSION['user_id'])) {
 
                 <?php
 
-                $query_res = mysqli_query($db, "select * from users where u_id='" . $_SESSION['user_id'] . "'");
+                $query_res = mysqli_query($db, "select * from users where u_id='".$_SESSION['user_id']."'");
 
                 $row = mysqli_fetch_array($query_res)
 
@@ -155,7 +152,7 @@ if (empty($_SESSION['user_id'])) {
 
                                     <label for="website">Username</label>
 
-                                    <div class="form-group">
+                                    <div class="form-group" id="userN">
                                         <?php echo $row['username']; ?>
                                     </div>
                                 </div>
@@ -166,7 +163,7 @@ if (empty($_SESSION['user_id'])) {
                                     <div class="form-group">
                                         <label for="fullName">First Name</label>
 
-                                        <div class="form-group">
+                                        <div class="form-group" id="first">
                                             <?php echo $row['f_name']; ?>
                                         </div>
                                     </div>
@@ -176,7 +173,7 @@ if (empty($_SESSION['user_id'])) {
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label for="fullName">Last Name</label>
-                                        <div class="form-group">
+                                        <div class="form-group" id="last">
                                             <?php echo $row['l_name']; ?>
                                         </div>
                                     </div>
@@ -187,7 +184,7 @@ if (empty($_SESSION['user_id'])) {
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label for="eMail">Email</label>
-                                        <div class="form-group">
+                                        <div class="form-group" id="email">
                                             <?php echo $row['email']; ?>
                                         </div>
                                     </div>
@@ -196,7 +193,7 @@ if (empty($_SESSION['user_id'])) {
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label for="phone">Phone</label>
-                                        <div class="form-group">
+                                        <div class="form-group" id="phone">
                                             <?php echo $row['phone']; ?>
                                         </div>
                                     </div>
@@ -207,7 +204,7 @@ if (empty($_SESSION['user_id'])) {
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label for="address">Address</label>
-                                        <div class="form-group">
+                                        <div class="form-group" id="address">
                                             <?php echo $row['address']; ?>
                                         </div>
                                     </div>
