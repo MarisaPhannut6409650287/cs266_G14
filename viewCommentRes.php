@@ -64,8 +64,13 @@ $resID = $_GET['res_id'];
                 //echo "User: " . $userN;
             }
 
+<<<<<<< Updated upstream
             if (isset($_POST["send"])) {
                 $rate = $_POST["rating"];
+=======
+            if(isset($_POST["detail"])) {
+                $rate = $_POST["point"];
+>>>>>>> Stashed changes
                 $type = $_POST["type"];
                 $detail = $_POST["detail"];
                 $date = date("Y-m-d");
@@ -101,6 +106,7 @@ $resID = $_GET['res_id'];
                 <input type="text" class="form-control" aria-label="Text input with dropdown button" name="detail">
             </div><br>
             <h5>Rate us now!!</h5>
+<<<<<<< Updated upstream
             <p class="stars">
                 <span>
                     <a class="star-1" href="#" data-rating="1">1</a>
@@ -111,6 +117,15 @@ $resID = $_GET['res_id'];
                 </span>
             </p>
             <input type="hidden" name="rating" id="ratingInput" value="">
+=======
+            <select class="form-select" id="inputGroupSelect02" name="point">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select><br>
+>>>>>>> Stashed changes
             <button type="submit" class="btn btn-success" id="commentButtn" name="send">Send Review</button>
         </form><br>
     </div>
@@ -189,24 +204,6 @@ $resID = $_GET['res_id'];
     </div>
     <p style="margin-bottom: 58px; font-size: 18px;">End Review</p>
 
-    <script>
-        $(document).ready(function () {
-            $('.stars a').on('click', function (e) {
-                e.preventDefault(); // Prevent the default behavior
-
-                $('.stars span, .stars a').removeClass('active');
-                $(this).addClass('active');
-                $('.stars span').addClass('active');
-
-                var rating = $(this).data('rating');
-                $('#ratingInput').val(rating);
-            });
-
-            $('#commentButtn').click(function () {
-                $('#formSubmit').submit();
-            });
-        });
-    </script>
 
 </body>
 
@@ -293,7 +290,19 @@ $resID = $_GET['res_id'];
         font-size: 26px;
     }
 
+<<<<<<< Updated upstream
     #count {
+=======
+    #inputGroupSelect02 {
+        width: 60px;
+        margin: 0 auto;
+        display: block;
+    }
+
+
+    #count,
+    #countReview {
+>>>>>>> Stashed changes
         font-family: 'Source Sans 3', sans-serif;
         font-weight: 800;
         text-align: center;
