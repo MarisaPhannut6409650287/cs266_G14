@@ -5,10 +5,15 @@
 <li> Search Menu
 <li> Alert when order status changed
 
+### Features added in Sprint 2 :
+
+<li> View Personal Information
+<li> Review Restaurant
+
 ### Admin Login Info Details
 
 Email : ccbd <br/> Password: CodeCampBD2023
 
 ### User Login Info Detail
 
-Username : username <br/> Password: user1234
+Username : super_z <br/> Password: user1234
